@@ -205,4 +205,3 @@ describe "manifest-validation" {
         }
     }
 }
-
