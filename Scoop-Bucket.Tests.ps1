@@ -144,7 +144,7 @@ describe 'Style constraints for non-binary project files' {
 
         if ($badLines.Count -gt 0)
         {
-            throw "The following $($badLines.Count) lines contain TABs within leading whitespace: `r`n`r`n$($badLines -join "`r`n")"
+          throw "The following $($badLines.Count) lines contain TABs within leading whitespace: `r`n`r`n$($badLines -join "`r`n")"
         }
     }
 
@@ -205,3 +205,4 @@ describe "manifest-validation" {
         }
     }
 }
+
