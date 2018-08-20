@@ -31,7 +31,6 @@
                     "extract_dir": "subgit-$version"
             }
         }
-      
     },
      "persist": [
           "daemon-shared"
