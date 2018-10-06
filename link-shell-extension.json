@@ -4,12 +4,11 @@
     "architecture": {
         "64bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe",
-            "hash": "001917884755ddc13eab06446469a026bace6a46ee44081f7d8b69592b791080",
+            "hash": "f94eeeaa076c9b00aa904063aa17a39a9e635454522c6c28c82c707e07ca1c7a",
             "extract_dir": "link-shell-3.8.7.1-winx64"
         },
         "32bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe",
-            "hash": "15745c9a3a54504f2b5f9213de117a9ff26f7c4e320482c34c8968b4b7245a9e",
             "extract_dir": "link-shell-3.8.7.1-win32"
         }
     },
