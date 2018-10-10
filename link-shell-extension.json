@@ -1,0 +1,18 @@
+{
+    "homepage": "http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html",
+    "version": "3.8.7.1",
+    "architecture": {
+        "64bit": {
+            "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe",
+            "hash": "f94eeeaa076c9b00aa904063aa17a39a9e635454522c6c28c82c707e07ca1c7a",
+            "extract_dir": "link-shell-3.8.7.1-winx64"
+        },
+        "32bit": {
+            "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe",
+            "extract_dir": "link-shell-3.8.7.1-win32"
+        }
+    },
+    "notes": [
+        "Restart explorer to activate context menu."
+    ]
+}
