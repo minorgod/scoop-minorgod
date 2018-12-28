@@ -16,7 +16,7 @@
     "env_add_path": "bin",
     "checkver": {
         "url": "https://subgit.com/download",
-        "re": "(?<version>\\d\\.\\d\\.\\d)/ #(?<build>[\\d]+)/ of (?<date>[u\\d\\.]+)",
+        "re": "(?<version>\\d\\.\\d\\.\\d) build #(?<build>[\\d]+) of (?<date>[\\d\\.]+)",
         "reverse": false
     },
     "autoupdate": {
