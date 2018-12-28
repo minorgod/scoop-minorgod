@@ -4,15 +4,16 @@
     "license": "https://subgit.com/eula",
     "architecture": {
         "64bit": {
-            "url": "https://subgit.com/files/subgit-3.3.5.zip#/dl.7z",
-            "hash": "c69be5e8724e5c7260e40586abdf42b79e025ac4bbdd5bf76e4cafab6e860a38"
+            "url": "https://subgit.com/files/subgit-3.3.5.zip",
+            "hash": "c69be5e8724e5c7260e40586abdf42b79e025ac4bbdd5bf76e4cafab6e860a38",
+            "extract_dir": "subgit-3.3.5"
         },
         "32bit": {
-            "url": "https://subgit.com/files/subgit-3.3.5.zip#/dl.7z",
-            "hash": "c69be5e8724e5c7260e40586abdf42b79e025ac4bbdd5bf76e4cafab6e860a38"
+            "url": "https://subgit.com/files/subgit-3.3.5.zip",
+            "hash": "c69be5e8724e5c7260e40586abdf42b79e025ac4bbdd5bf76e4cafab6e860a38",
+            "extract_dir": "subgit-3.3.5"
         }
     },
-    "env_add_path": "bin",
     "checkver": {
         "url": "https://subgit.com/download",
         "re": "(?<version>\\d\\.\\d\\.\\d) build #(?<build>[\\d]+) of (?<date>[\\d\\.]+)",
@@ -22,33 +23,24 @@
         "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
         "architecture": {
             "64bit": {
-                "url": "https://subgit.com/files/subgit-$version.zip#/dl.7z",
-                "extract_dir": "subgit-$version"
+                "url": "https://subgit.com/files/subgit-$version.zip",
+                "extract_dir": "subgit-$version",
+                "env_add_path": "bin"
             },
             "32bit": {
-                "url": "https://subgit.com/files/subgit-$version.zip#/dl.7z",
-                "extract_dir": "subgit-$version"
+                "url": "https://subgit.com/files/subgit-$version.zip",
+                "extract_dir": "subgit-$version",
+                "env_add_path": "bin"
             }
         }
     },
     "persist": "daemon-shared",
+    "env_add_path": "bin",
     "pre_install": [
-        "$root=(scoop which subgit | split-path -res -par | split-path -par)",
-        "Write-Host \"To uninstall service type:
-\"",
-        "Write-Host \"#sc.exe stop \"SubgitService\"\"
-",
-        "Write-Host \"#sc.exe delete \"SubgitService\"\"
-"
+		"subgit daemon stop $persist_dir/daemon-shared"
     ],
     "post_install": [
-        "$root=(scoop which subgit | split-path -res -par | split-path -par)",
-        "Write-Host \"To install service type:
-\"",
-        "Write-Host \"#sc.exe create \"SubgitService\" type= own start= auto error= normal binpath= \"$root\\bin\\subgit.bat daemon start $root\\daemon-shared\" displayname= \"Subgit Service\"\"
-",
-        "Write-Host \"#sc.exe start \"SubgitService\"\"
-"
+        "subgit daemon start $persist_dir/daemon-shared"
     ],
     "notes": "Yay."
 }
