@@ -37,7 +37,7 @@
     "persist": "daemon-shared",
     "env_add_path": "bin",
     "pre_install": [
-		"subgit daemon stop $persist_dir/daemon-shared"
+		"~/scoop/apps/subgit/current/bin/subgit.bat daemon stop ~/scoop/persist/subgit/daemon-shared"
     ],
     "post_install": [
         "subgit daemon start $persist_dir/daemon-shared"
