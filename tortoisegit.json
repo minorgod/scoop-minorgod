@@ -12,5 +12,5 @@
         "  $content = $content.Replace('$code', $codepath)",
         "  $content | Set-Content -Path \"$dir\\tortoisegit-install.reg\"",
         "}"
-    ],
+    ]
 }
