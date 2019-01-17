@@ -1,10 +1,48 @@
 {
-    "url": "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-64bit.msi",
+    "homepage": "https://tortoisegit.org/",
     "version": "2.7.0.0",
     "bin": [
         ["Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe", "tgitproc"],
         ["Program Files\\TortoiseGit\\bin\\TortoiseGit_en.chm", "tgithelp"]
     ],
+	"architecture": {
+        "64bit": {
+            "url": "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-64bit.msi",
+            "hash": "ED6C4B8A1A122380D790BF512C6F8494475ADDADA3EF7EB2CCBE98C1F3913BBE",
+            "extract_dir": "tortoisegit-2.7.7.0-64"
+        },
+        "32bit": {
+            "url": "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-32bit.msi",
+            "hash": "5C9C734CD5B354F5FDD485793677430A067A629F5019410D65A31E3306A81470",
+            "extract_dir": "tortoisegit-2.7.7.0-32"
+        }
+    },
+	 "checkver": {
+        "url": "https://tortoisegit.org/download/",
+        "re": "\/\/download.tortoisegit.org\/tgit\/(?<version>\\d\\.\\d\\.\\d\\.\\d)\/",
+        "reverse": false
+    },
+	 "autoupdate": {
+        "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
+        "architecture": {
+            "64bit": {
+                "url": "https://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-64bit.msi",
+                "extract_dir": "tortoisegit-$version-64",
+                "env_add_path": "bin"
+            },
+            "32bit": {
+                "url": "https://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-32bit.msi",
+                "extract_dir": "tortoisegit-$version-32",
+                "env_add_path": "bin"
+            }
+        }
+    },
+	"installer": {
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
 	 "post_install": [
         "if(Test-Path(\"$dir\\tortoisegit-install.reg\")) {",
 		"  $codepath = \"$dir\\Code.exe\".Replace('\\', '\\\\')",
