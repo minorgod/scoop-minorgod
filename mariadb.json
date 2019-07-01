@@ -1,17 +1,17 @@
 {
     "homepage": "https://mariadb.org",
-    "version": "10.3.9",
+    "version": "10.4.6",
     "license": "GPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.mariadb.org/f/mariadb-10.3.9/winx64-packages/mariadb-10.3.9-winx64.zip",
-            "hash": "001917884755ddc13eab06446469a026bace6a46ee44081f7d8b69592b791080",
-            "extract_dir": "mariadb-10.3.9-winx64"
+            "url": "https://downloads.mariadb.org/f/mariadb-10.4.6/winx64-packages/mariadb-10.4.6-winx64.zip",
+            "hash": "6cbcfc2c1ccd9802cec9e7c43270f4fa763e0583c9e6585dfade4d9e22c670b2",
+            "extract_dir": "mariadb-10.4.6-winx64"
         },
         "32bit": {
-            "url": "https://downloads.mariadb.org/f/mariadb-10.3.9/win32-packages/mariadb-10.3.9-win32.zip",
-            "hash": "15745c9a3a54504f2b5f9213de117a9ff26f7c4e320482c34c8968b4b7245a9e",
-            "extract_dir": "mariadb-10.3.9-win32"
+            "url": "https://downloads.mariadb.org/f/mariadb-10.4.6/win32-packages/mariadb-10.4.6-win32.zip",
+            "hash": "aac276f3e4c240ab2773f17ef75886a5e064c0ae532d3bf1bf6724d9bceed1ca",
+            "extract_dir": "mariadb-10.4.6-win32"
         }
     },
     "bin": [
@@ -43,9 +43,7 @@
         "bin\\mysql_upgrade_service.exe",
         "bin\\my_print_defaults.exe"
     ],
-    "persist": [
-        "data"
-    ],
+    "persist": "data",
     "post_install": [
         "# Initialize data directory (without generating root password)",
         "if (!(Test-Path \"$dir\\data\\auto.cnf\")) { mysqld --initialize-insecure }"
