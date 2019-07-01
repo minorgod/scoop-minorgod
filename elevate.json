@@ -31,7 +31,7 @@
 	 "installer": {
         "_comment": "run the installer scripts",
         "script": [
-			"sudo \"$dir\\Elevation-PowerToys-$version\\New-SysinternalsSuiteInstaller.ps1\"", 
+			"sudo scoop install sysinternals",
 			"sudo \"$dir\\Elevation-PowerToys-$version\\InstallAllPowerToys.cmd\""
 		]
     },
