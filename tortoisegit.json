@@ -18,7 +18,7 @@
 	 "checkver": {
         "url": "https://tortoisegit.org/download/",
         "re": "\/\/download.tortoisegit.org\/tgit\/(?<version>\\d\\.\\d\\.\\d\\.\\d)\/",
-        "reverse": false
+        "reverse": true
     },
 	 "autoupdate": {
         "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",

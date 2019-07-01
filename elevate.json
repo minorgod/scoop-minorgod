@@ -4,35 +4,37 @@
     "license": "https://github.com/mrkrch/Elevation-PowerToys/blob/master/Eula.doc?raw=true",
     "architecture": {
         "64bit": {
-           "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v1.1.1.zip#/dl.7z"
+           "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v1.1.1.zip"
             
         },
         "32bit": {
-               "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v1.1.1.zip#/dl.7z"
+               "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v1.1.1.zip"
         }
     },
-    "extract_dir": "elevate-v1.1.1",
     "checkver": {
         "url": "https://github.com/mrkrch/Elevation-PowerToys/releases",
-        "re": "(?Elevation-PowerToys/archive/v\\d\\.\\d\\.\\d\\.zip)",
+        "re": "Elevation-PowerToys/archive/v(?<version>\\d\\.\\d\\.\\d)\\.zip",
         "reverse": false
     },
     "autoupdate": {
         "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v$version.zip#/dl.7z",
-                 "extract_dir": "elevate-$version"
+                "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v$version.zip"
             },
             "32bit": {
-                "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v$version.zip#/dl.7z",
-                    "extract_dir": "elevate-$version"
+                "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v$version.zip"
+				
             }
         }
     },
-     "post_install": [
-        
-     ],
+	 "installer": {
+        "_comment": "run the installer scripts",
+        "script": [
+			"sudo \"$dir\\Elevation-PowerToys-$version\\New-SysinternalsSuiteInstaller.ps1\"", 
+			"sudo \"$dir\\Elevation-PowerToys-$version\\InstallAllPowerToys.cmd\""
+		]
+    },
      "notes":[
           "Yay."
      ]
