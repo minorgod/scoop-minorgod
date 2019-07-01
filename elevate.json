@@ -18,7 +18,7 @@
         "reverse": false
     },
     "autoupdate": {
-          "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
+        "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
         "architecture": {
             "64bit": {
                 "url": "https://github.com/mrkrch/Elevation-PowerToys/archive/v$version.zip#/dl.7z",
@@ -31,10 +31,7 @@
         }
     },
      "post_install": [
-          "$root=(scoop which subgit | split-path -res -par | split-path -par)",
-          "Write-Host \"To install service type:\n\"",
-          "Write-Host \"#sc.exe create \"SubgitService\" type= own start= auto error= normal binpath= \"$root\\bin\\subgit.bat daemon start $root\\daemon-shared\" displayname= \"Subgit Service\"\"\n",
-          "Write-Host \"#sc.exe start \"SubgitService\"\"\n"
+        
      ],
      "notes":[
           "Yay."
