@@ -5,12 +5,36 @@
         "64bit": {
             "url": "https://github.com/stefankueng/grepWin/releases/download/1.9.1/grepWin-x64-1.9.1_portable.exe",
             "extract_dir": "grep-win-$version-x64",
-            "hash": "95335b4ad1e42149a8e5e3ce4ce7114ba8cc50d5d671209a917c4aa6b8eca653"
+            "hash": "95335b4ad1e42149a8e5e3ce4ce7114ba8cc50d5d671209a917c4aa6b8eca653",
+			"bin": [
+                [
+                    "grepWin-x64-1.9.1_portable.exe",
+                    "grepWin"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "grepWin-x64-1.9.1_portable.exe",
+                    "grepWin"
+                ]
+            ]
         },
         "32bit": {
             "url": "https://github.com/stefankueng/grepWin/releases/download/1.9.1/grepWin-1.9.1_portable.exe",
             "extract_dir": "grep-win-$version",
-            "hash": "015a9427d29be42dfa0defc73aa613a44d6eb3b0f5b76152f988d941fb8d9868"
+            "hash": "015a9427d29be42dfa0defc73aa613a44d6eb3b0f5b76152f988d941fb8d9868",
+			"bin": [
+                [
+                    "grepWin-1.9.1_portable",
+                    "grepWin"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "grepWin-1.9.1_portable",
+                    "grepWin"
+                ]
+            ]
         }
     },
     "checkver": {
