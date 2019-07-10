@@ -1,16 +1,10 @@
 {
-    "homepage": "https://tortoisegit.org/",
     "version": "2.8.0.0",
-    "bin": [
-        [
-            "Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe",
-            "tgitproc"
-        ],
-        [
-            "Program Files\\TortoiseGit\\bin\\TortoiseGit_en.chm",
-            "tgithelp"
-        ]
-    ],
+    "description": "Windows Shell Interface to Git based on TortoiseSVN.",
+    "homepage": "https://tortoisegit.org/",
+    "license": {
+        "identifier": "GPL-2.0-only"
+    },
     "architecture": {
         "64bit": {
             "url": "https://download.tortoisegit.org/tgit/2.8.0.0/TortoiseGit-2.8.0.0-64bit.msi",
@@ -21,13 +15,43 @@
             "hash": "0a5d9e40ea760e83184461ae467559fb6d49831568a4f5eb8085f76b53b1fc88"
         }
     },
+    "extract_dir": "Program Files\\TortoiseGit",
+    "post_install": [
+        "$path = 'HKCU:\\Software\\TortoiseGit'",
+        "if (!(Test-path \"$path\")) {",
+        "    New-Item $path | Out-Null",
+        "    New-ItemProperty -Path $path -Name 'VersionCheck' -PropertyType DWord -Value 0 -Force | Out-Null",
+        "    New-ItemProperty -Path $path -Name 'MsysGit' -PropertyType String -Value \"$env:GIT_INSTALL_ROOT\\bin\" -Force | Out-Null",
+        "}"
+    ],
+    "bin": [
+        "bin\\TortoiseGitUDiff.exe",
+        "bin\\TortoisePlink.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin\\TortoiseGitMerge.exe",
+            "TortoiseGit Merge"
+        ],
+        [
+            "bin\\TortoiseGitBlame.exe",
+            "TortoiseGit Blame"
+        ],
+        [
+            "bin\\TortoiseGitIDiff.exe",
+            "TortoiseGit Diff"
+        ],
+        [
+            "bin\\TortoiseGitProc.exe",
+            "TortoiseGit Settings",
+            "/command:settings"
+        ]
+    ],
     "checkver": {
-        "url": "https://tortoisegit.org/download/",
-        "re": "//download.tortoisegit.org/tgit/(?<version>\\d\\.\\d\\.\\d\\.\\d)/",
-        "reverse": true
+        "url": "https://download.tortoisegit.org/tgit/",
+        "regex": "TortoiseGit is: <a href=/tgit/([\\d\\.]+)/"
     },
     "autoupdate": {
-        "note": "This scoop install manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
         "architecture": {
             "64bit": {
                 "url": "https://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-64bit.msi"
@@ -36,13 +60,5 @@
                 "url": "https://download.tortoisegit.org/tgit/$version/TortoiseGit-$version-32bit.msi"
             }
         }
-    },
-    "post_install": [
-        "if(Test-Path(\"$dir\\tortoisegit-install.reg\")) {",
-        "  $codepath = \"$dir\\Code.exe\".Replace('\\', '\\\\')",
-        "  $content = Get-Content \"$dir\\tortoisegit-install.reg\"",
-        "  $content = $content.Replace('$code', $codepath)",
-        "  $content | Set-Content -Path \"$dir\\tortoisegit-install.reg\"",
-        "}"
-    ]
+    }
 }
