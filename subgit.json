@@ -24,19 +24,39 @@
         "architecture": {
             "64bit": {
                 "url": "https://subgit.com/files/subgit-$version.zip",
-                "extract_dir": "subgit-$version",
-                "env_add_path": "bin"
+                "extract_dir": "subgit-$version"
             },
             "32bit": {
                 "url": "https://subgit.com/files/subgit-$version.zip",
-                "extract_dir": "subgit-$version",
-                "env_add_path": "bin"
+                "extract_dir": "subgit-$version"
             }
         }
     },
+    "bin": "bin\\subgit.bat",
     "persist": "daemon-shared",
     "env_add_path": "bin",
-    "pre_install": "~/scoop/apps/subgit/current/bin/subgit.bat daemon stop ~/scoop/persist/subgit/daemon-shared",
-    "post_install": "subgit daemon start $persist_dir/daemon-shared",
+    "pre_install": [
+        "$daemon_shared = \"$persist_dir\\daemon-shared\"",
+        "if((test-path $daemon_shared\\shared-daemon.pid) -and (test-path $dir\\bin\\subgit.bat)) {",
+        "    Write-Output \"Stopping subgit shared daemon at $(Convert-Path $daemon_shared)\"",
+        "    subgit daemon stop \"$daemon_shared\"",
+        "} else {",
+        "    Write-Host -f Yellow \"Subgit shared daemon is not running or it was not installed via scoop.\"",
+        "}"
+    ],
+    "post_install": [
+        "subgit daemon start \"$dir\\daemon-shared\""
+    ],
+    "uninstaller": {
+        "script": [
+            "$daemon_shared = \"$persist_dir\\daemon-shared\"",
+            "if((test-path $daemon_shared\\shared-daemon.pid) -and (test-path $dir\\bin\\subgit.bat)) {",
+            "    Write-Output \"Stopping subgit shared daemon at $(Convert-Path $daemon_shared)\"",
+            "    subgit daemon stop \"$daemon_shared\"",
+            "} else {",
+            "    Write-Host -f Yellow \"Subgit shared daemon is not running or it was not installed via scoop.\"",
+            "}"
+        ]
+    },
     "notes": "Yay."
 }
