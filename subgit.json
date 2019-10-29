@@ -56,5 +56,13 @@
             "}"
         ]
     },
-    "notes": "Yay."
+    "suggest": {
+        "JDK": [
+            "java/adoptopenjdk",
+            "java/oraclejdk",
+            "java/openjdk",
+            "java/zulu"
+        ]
+    },
+    "notes": "If you don't have some flavor of Java7 or higher installed, subgit won't work at all, so if you get errors trying to run the 'subgit' command you probably need to install a jdk from the java bucket. Run 'scoop bucket add java' then install a jdk."
 }
