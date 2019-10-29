@@ -1,18 +1,35 @@
 {
     "homepage": "http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html",
-    "version": "3.9.2.4",
+    "version": "3.927",
     "architecture": {
         "64bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe",
-            "hash": "5E0A0E2F763CA9CAD31A4D2A621E597BC5BE2D8C6FC98D43C91449933DB45BA1",
-            "extract_dir": "link-shell-3.8.7.1-winx64"
+            "hash": "617f0714c81b983570fb1c24b8da7e6e4b6c67aed72cdd223f960ef9c4bc19d2",
+            "extract_dir": "link-shell-3.927-X64"
         },
         "32bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe",
-            "extract_dir": "link-shell-3.8.7.1-win32"
+            "hash": "662017669c8884827a5111cfc9b63099ebcefa3f980ee953d6afbf3aaeebd188",
+            "extract_dir": "link-shell-3.927-win32"
         }
     },
-    "notes": [
-        "Restart explorer to activate context menu."
-    ]
+    "checkver": {
+        "url": "https://schinagl.priv.at/nt/hardlinkshellext/lse.xml",
+        "re": "LSE (?<version>\\d+\\.\\d+) has been released",
+        "reverse": false
+    },
+    "autoupdate": {
+        "note": "This link sheel extension manifest was created by Brett Brewer. If you encounter issues please post an issue on the github page.",
+        "architecture": {
+            "64bit": {
+                "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe",
+                "extract_dir": "link-shell-$version-X64"
+            },
+            "32bit": {
+                "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe",
+                "extract_dir": "link-shell-$version-win32"
+            }
+        }
+    },
+    "notes": "Restart explorer to activate context menu."
 }
