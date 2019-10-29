@@ -8,13 +8,13 @@
             "hash": "4bf60732014c955a600c18236eb3a5dea4ae2f4f9f5d513de60235e0ae7bdbe1",
             "bin": [
                 [
-                    "grepWin-x64-$version_portable.exe",
+                    "grepWin-x64-1.9.2_portable.exe",
                     "grepWin"
                 ]
             ],
             "shortcuts": [
                 [
-                    "grepWin-x64-$version_portable.exe",
+                    "grepWin-x64-1.9.2_portable.exe",
                     "grepWin"
                 ]
             ]
@@ -25,13 +25,13 @@
             "hash": "c1f154e8828e0a5724b3c6d0baabd1baa7471eed43fe73ebe274c56e95909e00",
             "bin": [
                 [
-                    "grepWin-$version_portable",
+                    "grepWin-1.9.2_portable",
                     "grepWin"
                 ]
             ],
             "shortcuts": [
                 [
-                    "grepWin-$version_portable",
+                    "grepWin-1.9.2_portable",
                     "grepWin"
                 ]
             ]
