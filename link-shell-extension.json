@@ -1,16 +1,16 @@
 {
     "homepage": "http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html",
-    "version": "3.927",
+    "version": "3.931",
     "architecture": {
         "64bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_X64.exe",
-            "hash": "617f0714c81b983570fb1c24b8da7e6e4b6c67aed72cdd223f960ef9c4bc19d2",
-            "extract_dir": "link-shell-3.927-X64"
+            "hash": "6b72449277601eb7a0c15992edcff7d835d7f99836f0d02a2687856a994a3654",
+            "extract_dir": "link-shell-3.931-X64"
         },
         "32bit": {
             "url": "http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe",
-            "hash": "662017669c8884827a5111cfc9b63099ebcefa3f980ee953d6afbf3aaeebd188",
-            "extract_dir": "link-shell-3.927-win32"
+            "hash": "5975120458cf4acecc0b98057abf10e75a78ef1d5bc2e10b331847a76e508c4f",
+            "extract_dir": "link-shell-3.931-win32"
         }
     },
     "checkver": {
