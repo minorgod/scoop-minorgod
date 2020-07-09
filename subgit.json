@@ -1,17 +1,17 @@
 {
     "homepage": "https://subgit.com",
-    "version": "3.3.9",
+    "version": "3.3.10",
     "license": "https://subgit.com/eula",
     "architecture": {
         "64bit": {
-            "url": "https://subgit.com/files/subgit-3.3.9.zip",
-            "hash": "65039f787790e9eff7ee5802c2d6fb884dfabb32d9ab60d6882cdf5afd148d37",
-            "extract_dir": "subgit-3.3.9"
+            "url": "https://subgit.com/files/subgit-3.3.10.zip",
+            "hash": "d3a1bda99bc6b791f73e14775fd5addd3401d356c68f058a96be78079faaecfc",
+            "extract_dir": "subgit-3.3.10"
         },
         "32bit": {
-            "url": "https://subgit.com/files/subgit-3.3.9.zip",
-            "hash": "65039f787790e9eff7ee5802c2d6fb884dfabb32d9ab60d6882cdf5afd148d37",
-            "extract_dir": "subgit-3.3.9"
+            "url": "https://subgit.com/files/subgit-3.3.10.zip",
+            "hash": "d3a1bda99bc6b791f73e14775fd5addd3401d356c68f058a96be78079faaecfc",
+            "extract_dir": "subgit-3.3.10"
         }
     },
     "checkver": {
