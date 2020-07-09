@@ -37,8 +37,8 @@
         ]
     },
     "checkver": {
-        "url": "https://www.reaper.fm/download.php",
-        "regex": "Version ([\\d.]+)"
+        "url": "https://www.reaper.fm/download-old.php?ver=5x",
+        "regex": "REAPER v(5\\.[\\d]+)"
     },
     "autoupdate": {
         "architecture": {
