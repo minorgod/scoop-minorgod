@@ -16,7 +16,7 @@
     },
     "checkver": {
         "url": "https://subgit.com/download",
-        "re": "(?<version>\\d\\.\\d\\.\\d) build #(?<build>[\\d]+) of (?<date>[\\d\\.]+)",
+        "re": "(?<version>\\d+\\.\\d+\\.\\d+) build #(?<build>[\\d]+) of (?<date>[\\d\\.]+)",
         "reverse": false
     },
     "autoupdate": {
